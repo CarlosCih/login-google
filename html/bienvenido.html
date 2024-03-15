@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sign-In</title>
+    <!-- Incluir el script de Google Sign-In -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+    <!-- Contenedor para mostrar el botón de inicio de sesión -->
+    <div id="g_id_onload" data-client_id="40067580652-sr2s2h579t5e686ddu4q5gmrv54voo8v.apps.googleusercontent.com">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <!-- Otro contenido de la página -->
+    <h1>Bienvenido</h1>
+    <!-- Otros elementos de la página -->
+    <a href="../index.html" onclick="signOut();">Sign out</a>
+    <!-- Script para inicializar Google Sign-In -->
+    <script>
+        
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+      }
+    </script>
+</body>
+
+</html>
